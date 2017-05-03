@@ -39,4 +39,4 @@
 
 }
 
-Nuke-RunHistory -DaysToSave 0
+Nuke-RunHistory -DaysToSave 4
