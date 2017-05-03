@@ -10,7 +10,7 @@
  
         $TimeZone = Get-WmiObject Win32_TimeZone 
         $UTCOffset =  if ((get-date).IsDaylightSavingTime()) {($TimeZone.Bias)/60 + 1} Else {($TimeZone.Bias)/60}
-        $SaveTillDateTime = (get-date).AddDays($DaysToSave)
+        $SaveTillDateTime = (get-date).AddDays(-$DaysToSave)
 
         #This could take a while
         $Runs = Get-WmiObject -ComputerName . -NameSpace 'root/MicrosoftIdentityIntegrationServer' -Query "Select RunStartTime From MIIS_RunHistory"
